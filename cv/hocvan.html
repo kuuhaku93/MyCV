@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUCATION</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .left-panel {
+      width: 40%;
+      background-color: #ffffff;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .avatar {
+      width: 120px;
+      border-radius: 50%;
+      border: 3px solid #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+      color: #1976d2;
+    }
+
+    .right-panel {
+      width: 60%;
+      padding: 40px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #1976d2;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: #1976d2;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .timeline-year {
+      font-weight: bold;
+      color: #0d47a1;
+      margin-bottom: 5px;
+    }
+
+    .timeline-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .timeline-description {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-panel">
+      <img src="img/avatar.jpg" class="avatar">
+      <div class="name">Truong Minh Tri</div>
+      <div class="description">A recent graduate in Mobile Programming, driven by passion and youthful energy, ready to take on new challenges.</div>
+
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-envelope"></i> 0306231432@gmail.com</div>
+        <div class="contact-item"><i class="fas fa-phone"></i> 0367 067 255</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> District 7, Ho Chi Minh City</div>
+        <div class="contact-item"><i class="fas fa-calendar-alt"></i> 31-01-2005</div>
+        <div class="contact-item"><i class="fas fa-mars"></i> Male</div>
+      </div>
+    </div>
+
+    <!-- Nửa phải: Timeline -->
+    <div class="right-panel">
+      <div class="section-title">🎓 EDUCATIONAL LEVEL</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-title">Top 10 of the school in the National High School Graduation Exam</div>
+          <div class="timeline-description">Graduated with distinction, ranked in the Top 10 of the school in the National High School Graduation Examination</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1/2024</div>
+          <div class="timeline-title">NATIONAL DEFENSE AND SECURITY EDUCATION Certificate</div>
+          <div class="timeline-description">National Defense and Security Education Certificate issued by the City Military School, Campus Two</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">7/2024</div>
+          <div class="timeline-title">English Certificate 2/6</div>
+          <div class="timeline-description">Obtained English certificate level 2/6 from Cao Thắng Technical College</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023–2026</div>
+          <div class="timeline-title">Cao Thang Technical College</div>
+          <div class="timeline-description">Studying a major in Mobile Programming at Cao Thang Technical College</div>
+        </div>
+      </div>
+
+      <div class="section-title">💼 WORK EXPERIENCE</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2024–2025</div>
+          <div class="timeline-title">FREELANCER</div>
+          <div class="timeline-description">has experience working as a freelancer on small and medium-sized projects</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">MANTER</div>
+          <div class="timeline-description">Has experience working as a collaborator for the club's courses at the school</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

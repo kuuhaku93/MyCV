@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c0e0f591;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 100vh;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .avatar-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .avatar-box img {
+            width: 200px;
+            border-radius: 50%;
+            border: 3px solid #1976d2;
+        }
+
+        .avatar-box h2 {
+            margin: 0;
+            color: #1976d2;
+        }
+
+        .contact-card {
+            width: 80%;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #1976d2;
+        }
+
+        .contact-card h2 {
+
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .info-item i {
+            color: #1976d2;
+            margin-right: 12px;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .labels-column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .label-box {
+            background: #52a5f847;
+            padding: 20px;
+            border-left: 6px solid #0d47a1;
+            font-weight: bold;
+            color: #1976d2;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .radar-box {
+            width: 80%;
+            max-height: 45vh;
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(25, 118, 210, 1);
+        }
+
+        .radar-box h3 {
+            margin-top: 0;
+            color: #0d47a1;
+            text-align: center;
+        }
+
+        canvas {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        h2,
+        h3 {
+            margin: 10px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        svg {
+            max-width: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="avatar-box">
+                <img src="cv/img/avatar.jpg" alt="Ảnh đại diện">
+                <h2>Truong Minh Tri</h2>
+                <p>An Information Technology major at Cao Thang Technical College</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="contact-card">
+                <h2>Contact information</h2>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>0306231432@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0367067255</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>District 7, Ho Chi Minh City</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>31/01/2005</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-mars"></i>
+                    <span>Male</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Dưới bên trái: Các mục -->
+        <div class="box">
+            <div class="labels-column">
+                <a href="cv/kinhnghiem.html">
+                    <div class="label-box">Work experience</div>
+                </a>
+                <a href="cv/kynang.html">
+                    <div class="label-box">Capability</div>
+                </a>
+                <a href="cv/hocvan.html">
+                    <div class="label-box">Education</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="radar-box">
+                <h3>Competency Assessment Chart</h3>
+                <canvas id="powerRadarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dataValues = [90, 70, 85, 75, 80];
+        const labels = ['Embedded', 'Back-End', 'Front-End', 'Design', 'Analyst'];
+        const ctx = document.getElementById('powerRadarChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Capacity assessment',
+                    data: dataValues,
+                    fill: true,
+                    backgroundColor: 'rgba(25, 118, 210, 0.2)',
+                    borderColor: 'rgba(25, 118, 210, 1)',
+                    pointBackgroundColor: 'rgba(13, 71, 161, 1)'
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const value = context.raw;
+                                return `${context.label}: ${value}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        pointLabels: {
+                            font: {
+                                size: 14
+                            },
+                            color: '#333333'
+                        },
+                        grid: {
+                            color: '#50d5f6'
+                        },
+                        angleLines: {
+                            color: '#50d5f6'
+                        },
+                        ticks: {
+                            color: '#333333'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
